@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url('../images/suja.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body h1{
+    padding: 100px;
+    color: green;
+}
+
+body ul{
+    padding: 10px 0px 0px 100px;
+    width: 360px;
+    font-size: 1.8em;
+    color: #5554fe;
+    background-color: white;
+    
+}
+
+body ul img {
+    padding: 0px 20px 0px 10px;
+    width: 33px;
+}
+
+body ul li {
+    padding: 10px;
+}

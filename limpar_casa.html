@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpar a casa</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/style_casa.css">
+</head>
+<body>
+    <h1>ATIVIDADES!</h1>
+    <ul>
+        <li><img id="img1" src="images/quadrado.png" alt="quadrado">Limpar a mesa</li>
+        <li><img id="img2" src="images/quadrado.png" alt="quadrado">Limpar o microondas</li>
+        <li><img id="img3" src="images/quadrado.png" alt="quadrado">Limpar os sofás</li>
+        <li><img id="img4" src="images/quadrado.png" alt="quadrado">Limpar o rack</li>
+        <li><img id="img5" src="images/quadrado.png" alt="quadrado">Limpar o fogão</li>
+        <li><img id="img6" src="images/quadrado.png" alt="quadrado">Limpar a mesinha</li>
+        <li><img id="img7" src="images/quadrado.png" alt="quadrado">Tirar o lixo</li>
+        <li><img id="img8" src="images/quadrado.png" alt="quadrado">Varrer a casa</li>
+    </ul>
+    <script>
+        const imagens = document.querySelectorAll('ul li img');
+
+        imagens.forEach(img => {
+            img.addEventListener('click', () => {
+                if (img.src.endsWith('images/quadrado.png')) {
+                    img.src = 'images/check.webp';
+                } else {
+                    img.src = 'images/quadrado.png';
+                }
+
+                verificarTodasImagens();
+            });
+        });
+
+        function verificarTodasImagens() {
+            let todasMarcadas = true;
+            imagens.forEach(img => {
+                if (!img.src.endsWith('images/check.webp')) {
+                    todasMarcadas = false;
+                }
+            });
+
+            if (todasMarcadas) {
+                document.body.style.backgroundImage = "none"; // Remove a imagem de fundo
+                document.body.style.backgroundImage = "url('images/casa_limpa2.jpg')"; // Define a cor de fundo branca
+            } else {
+                document.body.style.backgroundImage = "url('images/suja.jpg')"; // Restaura a imagem de fundo
+                document.body.style.backgroundColor = ''; // Restaura a cor de fundo padrão (ou transparente)
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpar a casa</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/style_casa.css">
+</head>
+<body>
+    <h1>ATIVIDADES!</h1>
+    <ul>
+        <li><img id="img1" src="images/quadrado.png" alt="quadrado">Limpar a mesa</li>
+        <li><img id="img2" src="images/quadrado.png" alt="quadrado">Limpar o microondas</li>
+        <li><img id="img3" src="images/quadrado.png" alt="quadrado">Limpar os sofás</li>
+        <li><img id="img4" src="images/quadrado.png" alt="quadrado">Limpar o rack</li>
+        <li><img id="img5" src="images/quadrado.png" alt="quadrado">Limpar o fogão</li>
+        <li><img id="img6" src="images/quadrado.png" alt="quadrado">Limpar a mesinha</li>
+        <li><img id="img7" src="images/quadrado.png" alt="quadrado">Tirar o lixo</li>
+        <li><img id="img8" src="images/quadrado.png" alt="quadrado">Varrer a casa</li>
+    </ul>
+    <script>
+        const imagens = document.querySelectorAll('ul li img'); // Seleciona todas as imagens
+
+        imagens.forEach(img => { // Adiciona o evento de clique a cada imagem
+            img.addEventListener('click', () => {
+                if (img.src.endsWith('images/quadrado.png')) {
+                    img.src = 'images/check.webp';
+                } else {
+                    img.src = 'images/quadrado.png';
+                }
+
+                verificarTodasImagens(); // Verifica após cada clique
+            });
+        });
+
+        function verificarTodasImagens() {
+            let todasMarcadas = true;
+            imagens.forEach(img => {
+                if (!img.src.endsWith('images/check.webp')) {
+                    todasMarcadas = false;
+                }
+            });
+
+            if (todasMarcadas) {
+                document.body.style.backgroundColor = '#ffffff';
+            } else {
+                document.body.style.backgroundColor = ''; // Ou outra cor padrão
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpar a casa</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/style_casa.css">
+</head>
+<body>
+    <h1>ATIVIDADES!</h1>
+    <ul>
+        <li><img id="img1" src="images/quadrado.png" alt="quadrado">Limpar a mesa</li>
+        <li><img id="img2" src="images/quadrado.png" alt="quadrado">Limpar o microondas</li>
+        <li><img id="img3" src="images/quadrado.png" alt="quadrado">Limpar os sofás</li>
+        <li><img id="img4" src="images/quadrado.png" alt="quadrado">Limpar o rack</li>
+        <li><img id="img5" src="images/quadrado.png" alt="quadrado">Limpar o fogão</li>
+        <li><img id="img6" src="images/quadrado.png" alt="quadrado">Limpar a mesinha</li>
+        <li><img id="img7" src="images/quadrado.png" alt="quadrado">Tirar o lixo</li>
+        <li><img id="img8" src="images/quadrado.png" alt="quadrado">Varrer a casa</li>
+    </ul>
+    <script>
+
+        const img1 = document.getElementById('img1');
+        
+        function trocarImagem() {
+            if (img1.src.endsWith('images/quadrado.png')) {
+                img1.src = 'images/check.webp';
+                teste = 2;
+            }
+            else
+                img1.src = 'images/quadrado.png';
+        }
+
+        img1.addEventListener('click', trocarImagem);
+
+        const img2 = document.getElementById('img2');
+        
+        function trocarImagem2() {
+            if (img2.src.endsWith('images/quadrado.png')) {
+                img2.src = 'images/check.webp';
+            }
+            else
+                img2.src = 'images/quadrado.png';
+        }
+
+        img2.addEventListener('click', trocarImagem2);
+
+        const img3 = document.getElementById('img3');
+        
+        function trocarImagem3() {
+            if (img3.src.endsWith('images/quadrado.png')) 
+                img3.src = 'images/check.webp';
+            else
+                img3.src = 'images/quadrado.png';
+        }
+
+         img3.addEventListener('click', trocarImagem3);
+
+        const img4 = document.getElementById('img4');
+        
+        function trocarImagem4() {
+            if (img4.src.endsWith('images/quadrado.png')) 
+                img4.src = 'images/check.webp';
+            else
+                img4.src = 'images/quadrado.png';
+        }
+
+        img4.addEventListener('click', trocarImagem4);
+
+        const img5 = document.getElementById('img5');
+        
+        function trocarImagem5() {
+            if (img5.src.endsWith('images/quadrado.png')) 
+                img5.src = 'images/check.webp';
+            else
+                img5.src = 'images/quadrado.png';
+        }
+
+        img5.addEventListener('click', trocarImagem5);
+
+        const img6 = document.getElementById('img6');
+        
+        function trocarImagem6() {
+            if (img6.src.endsWith('images/quadrado.png')) 
+                img6.src = 'images/check.webp';
+            else 
+                img6.src = 'images/quadrado.png';
+        }
+
+        img6.addEventListener('click', trocarImagem6);
+
+        const img7 = document.getElementById('img7');
+        
+        function trocarImagem7() {
+            if (img7.src.endsWith('images/quadrado.png')) 
+                img7.src = 'images/check.webp';
+            else 
+                img7.src = 'images/quadrado.png';
+        }
+
+        img7.addEventListener('click', trocarImagem7);
+
+        const img8 = document.getElementById('img8');
+        
+        function trocarImagem8() {
+            if (img8.src.endsWith('images/quadrado.png')) 
+                img8.src = 'images/check.webp';
+            else {
+                img8.src = 'images/quadrado.png';
+            }
+        }
+
+        img8.addEventListener('click', trocarImagem8);
+
+        if (teste === 2) {
+            img2.src = 'images/check.webp';
+        }
+
+        if ((img1.src.endsWith('images/check.webp')) && (img2.src.endsWith('images/check.webp')) && (img3.src.endsWith('images/check.webp')) && (img4.src.endsWith('images/check.webp')) && (img5.src.endsWith('images/check.webp')) && (img6.src.endsWith('images/check.webp')) && (img7.src.endsWith('images/check.webp')) && (img8.src.endsWith('images/check.webp'))) {
+            document.body.style.backgroundColor = '#ffffff';
+         }
+    </script>
+</body>
+</html> -->
