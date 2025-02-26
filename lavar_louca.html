@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpar a casa</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style/style_louca.css">
-    <title>lavar_louca</title>
+    <link rel="stylesheet" href="style/style_casa.css">
 </head>
 <body>
-    <article>
-        <h1>ATIVIDADES!</h1>
-        <h2>Deixar a pia assim.</h2>
-    </article>
+    <h1>ATIVIDADES!</h1>
+    <ul>
+        <li><img id="img1" src="images/quadrado.png" alt="quadrado">Lavar a louça</li>
+        <li><img id="img2" src="images/quadrado.png" alt="quadrado">Secar a louça</li>
+    </ul>
+    <script>
+        const imagens = document.querySelectorAll('ul li img');
+
+        imagens.forEach(img => {
+            img.addEventListener('click', () => {
+                if (img.src.endsWith('images/quadrado.png')) {
+                    img.src = 'images/check.webp';
+                } else {
+                    img.src = 'images/quadrado.png';
+                }
+
+                verificarTodasImagens();
+            });
+        });
+
+        function verificarTodasImagens() {
+            let todasMarcadas = true;
+            imagens.forEach(img => {
+                if (!img.src.endsWith('images/check.webp')) {
+                    todasMarcadas = false;
+                }
+            });
+
+            if (todasMarcadas) {
+                document.body.style.backgroundImage = "none"; // Remove a imagem de fundo
+                document.body.style.backgroundImage = "url('images/casa_limpa2.jpg')"; // Define a cor de fundo branca
+                document.querySelectorAll('li').forEach(li => li.classList.add('concluído'));
+            } else {
+                document.body.style.backgroundImage = "url('images/suja.jpg')"; // Restaura a imagem de fundo
+                document.body.style.backgroundColor = ''; // Restaura a cor de fundo padrão (ou transparente)
+            }
+        }
+    </script>
 </body>
 </html>

@@ -21,9 +21,8 @@ body ul{
     padding: 10px 0px 0px 100px;
     width: 360px;
     font-size: 1.8em;
-    color: #5554fe;
-    background-color: white;
-    
+    color: black;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 body ul img {
@@ -32,5 +31,12 @@ body ul img {
 }
 
 body ul li {
+    background-color: white;
+    opacity: 0.7;
     padding: 10px;
+}
+
+.concluído {
+    color: black;
+    text-decoration: line-through;      
 }
